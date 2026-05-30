@@ -35,7 +35,7 @@ Arqel.Changelog = {
         }
     },
      {
-        Version = "v1.0.1",
+        Version = "v1.0.2",
         Date = "Update",
         Changes = {
             "Improvements Auto Farm",

@@ -34,6 +34,17 @@ Arqel.Changelog = {
             "Push Rock For Brainrots!",
         }
     },
+     {
+        Version = "v1.0.1",
+        Date = "Update",
+        Changes = {
+            "Improvements Auto Farm",
+            "Added New Tab 4 Button",
+            "Bug Fixed",
+            "Multi selection Dropdown",
+            "Added Anti Afk"
+        }
+    }, 
     {
         Version = "v1.0.1",
         Date = "Update",

@@ -38,11 +38,9 @@ Arqel.Changelog = {
         Version = "v1.0.2",
         Date = "Update",
         Changes = {
-            "Improvements Auto Farm Wins",
-            "Added New 4+ Egg World 2",
-            "Bug Fixed",
-            "Anti Cheat",
-            "Added Anti Afk"
+            "Auto Farm Brainrots Safe",
+            "Fixed Minor Bug",
+            "Improvements Anti",
         }
     }, 
     {

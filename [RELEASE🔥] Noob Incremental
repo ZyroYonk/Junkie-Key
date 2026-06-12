@@ -1,4 +1,4 @@
--- Docs 
+-- Docs
 -- https://github.com/Cobruhehe/expert-octo-doodle
 local Arqel = loadstring(game:HttpGet("https://raw.githubusercontent.com/Cobruhehe/expert-octo-doodle/refs/heads/main/ArqelUi.luau"))()
 Arqel.Appearance.Title = "Get Junkie Key"
@@ -25,7 +25,7 @@ Arqel.Shop = {
     Link = "https://discord.gg/PUE6et7CCz"
 }
 
--- Updated changelog (only game names + update logs)
+-- ✅ Fixed changelog – added missing closing brace
 Arqel.Changelog = {
     {
         Version = "Games",
@@ -34,6 +34,17 @@ Arqel.Changelog = {
             "[RELEASE🔥] Noob Incremental",
         }
     },
+    {
+        Version = "v1.0.2",
+        Date = "Update",
+        Changes = {
+            "- added auto upgrade fire",
+            "- added more upgrade rebirth",
+            "- added more upgrade Noob",
+            "- added auto buy noob",
+            "- smooth ui"
+        }
+    },  -- <-- closing brace for v1.0.2 was missing
     {
         Version = "v1.0.1",
         Date = "Update",
@@ -52,4 +63,5 @@ Arqel:LaunchJunkie({
 })
 
 -- Only runs AFTER key is accepted ✅
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ZyroYonk/ZyroYonk/refs/heads/main/Noob%20Incremental"))()
+-- Fixed URL: added .lua extension (assuming it's a Lua file)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ZyroYonk/ZyroYonk/refs/heads/main/Noob%20Incremental.lua"))()

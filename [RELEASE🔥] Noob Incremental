@@ -25,13 +25,25 @@ Arqel.Shop = {
     Link = "https://discord.gg/PUE6et7CCz"
 }
 
--- ✅ Fixed changelog – added missing closing brace
+-- Changelog: Games first, then v1.0.3, v1.0.2, v1.0.1
 Arqel.Changelog = {
     {
         Version = "Games",
         Date = "Named",
         Changes = {
             "[RELEASE🔥] Noob Incremental",
+        }
+    },
+    {
+        Version = "v1.0.3",
+        Date = "Latest",
+        Changes = {
+            "added Text Box Convert",
+            "added 6x Tree Upgrade",
+            "added auto roll",
+            "added auto upgrade Blaze",
+            "Smooth Convert Blaze",
+            "Added Anti Cheat"
         }
     },
     {
@@ -44,7 +56,7 @@ Arqel.Changelog = {
             "- added auto buy noob",
             "- smooth ui"
         }
-    },  -- <-- closing brace for v1.0.2 was missing
+    },
     {
         Version = "v1.0.1",
         Date = "Update",
@@ -63,5 +75,4 @@ Arqel:LaunchJunkie({
 })
 
 -- Only runs AFTER key is accepted ✅
--- Fixed URL: added .lua extension (assuming it's a Lua file)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ZyroYonk/ZyroYonk/refs/heads/main/Noob%20Incremental.lua"))()

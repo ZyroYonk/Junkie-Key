@@ -75,4 +75,4 @@ Arqel:LaunchJunkie({
 })
 
 -- Only runs AFTER key is accepted ✅
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ZyroYonk/ZyroYonk/refs/heads/main/Noob%20Incremental.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ZyroYonk/ZyroYonk/refs/heads/main/Noob%20Incremental"))()

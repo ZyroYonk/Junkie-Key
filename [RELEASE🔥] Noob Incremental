@@ -1,11 +1,17 @@
--- Docs
--- https://github.com/Cobruhehe/expert-octo-doodle
+-- ========== v1.0.4 – New Features ==========
+-- + Auto Upgrade Cash
+-- + Auto Reset Tycoon
+-- + Auto Super Rune
+-- + Auto Buy Starter Tree
+-- + x3 Auto Upgrade Tree
+-- + Improved Anti-Cheat bypass
+-- ===========================================
+
 local Arqel = loadstring(game:HttpGet("https://raw.githubusercontent.com/Cobruhehe/expert-octo-doodle/refs/heads/main/ArqelUi.luau"))()
 Arqel.Appearance.Title = "Get Junkie Key"
 Arqel.Appearance.Icon = "rbxassetid://134697043118282"
 Arqel.Links.Discord = "https://discord.gg/PUE6et7CCz"
 Arqel.Storage.FileName = "Jnkie_key"
--- Arqel.Options.KeylessUi = "true"
 Arqel.Theme.Accent = Color3.fromRGB(110, 60, 255)
 Arqel.Theme.AccentHover = Color3.fromRGB(130, 90, 255)
 Arqel.Theme.Background = Color3.fromRGB(10, 10, 20)
@@ -25,18 +31,30 @@ Arqel.Shop = {
     Link = "https://discord.gg/PUE6et7CCz"
 }
 
--- Changelog: Games first, then v1.0.3, v1.0.2, v1.0.1
+-- Changelog – each version on its own line, changes as simple bullet points
 Arqel.Changelog = {
     {
-        Version = "Games",
-        Date = "Named",
+        Version = "Games named",
+        Date = "",
         Changes = {
-            "[RELEASE🔥] Noob Incremental",
+            "[RELEASE] Noob Incremental"
+        }
+    },
+    {
+        Version = "v1.0.4",
+        Date = "",
+        Changes = {
+            "Auto Upgrade Cash",
+            "Auto Reset Tycoon",
+            "Auto Super Rune",
+            "Auto Buy Starter Tree",
+            "x3 Auto Upgrade Tree",
+            "Improved Anti-Cheat"
         }
     },
     {
         Version = "v1.0.3",
-        Date = "Latest",
+        Date = "",
         Changes = {
             "added Text Box Convert",
             "added 6x Tree Upgrade",
@@ -48,31 +66,115 @@ Arqel.Changelog = {
     },
     {
         Version = "v1.0.2",
-        Date = "Update",
+        Date = "",
         Changes = {
-            "- added auto upgrade fire",
-            "- added more upgrade rebirth",
-            "- added more upgrade Noob",
-            "- added auto buy noob",
-            "- smooth ui"
+            "added auto upgrade fire",
+            "added more upgrade rebirth",
+            "added more upgrade Noob",
+            "added auto buy noob",
+            "smooth ui"
         }
     },
     {
         Version = "v1.0.1",
-        Date = "Update",
+        Date = "",
         Changes = {
-            "Initial Realease",
+            "Initial Release",
             "Beta Added Lot Things"
         }
     }
 }
 
--- Waits for correct key, then loads your main script
+-- Key system
 Arqel:LaunchJunkie({
     Service = "ZyroYonk",
     Identifier = "1046660",
     Provider = "Starforge"
 })
 
--- Only runs AFTER key is accepted ✅
+-- =================== ADDED FEATURES ===================
+
+local function findButton(textSubstring)
+    for _, obj in pairs(game:GetDescendants()) do
+        if obj:IsA("TextButton") and string.find(string.lower(obj.Text or ""), string.lower(textSubstring)) then
+            return obj
+        end
+    end
+    return nil
+end
+
+local function clickButton(button)
+    if button and button:IsA("TextButton") and button.Visible then
+        button:Click()
+        return true
+    end
+    return false
+end
+
+local features = {
+    autoCash = false,
+    autoReset = false,
+    autoRune = false,
+    autoStarterTree = false,
+    autoTree3x = false
+}
+
+local function improveAntiCheat()
+    local antiCheatRemotes = {"AntiCheat", "CheatDetected", "BanWave"}
+    for _, remoteName in pairs(antiCheatRemotes) do
+        local remote = game:GetService("ReplicatedStorage"):FindFirstChild(remoteName)
+        if remote then remote:Destroy() end
+    end
+    if getrenv and getrenv()._G then
+        getrenv()._G.print = function() end
+    end
+    local ts = game:GetService("TelemetryService")
+    if ts then ts:SetTelemetryEnabled(false) end
+end
+
+spawn(function()
+    while task.wait(0.5) do
+        if features.autoCash then
+            clickButton(findButton("upgrade cash"))
+        end
+        if features.autoReset then
+            clickButton(findButton("reset") or findButton("tycoon reset") or findButton("prestige"))
+        end
+        if features.autoRune then
+            clickButton(findButton("super rune") or findButton("upgrade rune") or findButton("rune"))
+        end
+        if features.autoStarterTree then
+            clickButton(findButton("starter tree") or findButton("buy tree") or findButton("tree upgrade"))
+        end
+    end
+end)
+
+spawn(function()
+    while task.wait(0.3) do
+        if features.autoTree3x then
+            local treeBtn = findButton("upgrade tree")
+            for i = 1, 3 do
+                clickButton(treeBtn)
+                task.wait(0.05)
+            end
+        end
+    end
+end)
+
+improveAntiCheat()
+
+local Window = Arqel:Window({
+    Title = "Noob Incremental v1.0.4",
+    Size = UDim2.fromOffset(450, 600)
+})
+
+local AutoTab = Window:Tab("Automation")
+AutoTab:Toggle("Auto Upgrade Cash", function(state) features.autoCash = state end)
+AutoTab:Toggle("Auto Reset Tycoon", function(state) features.autoReset = state end)
+AutoTab:Toggle("Auto Super Rune", function(state) features.autoRune = state end)
+AutoTab:Toggle("Auto Buy Starter Tree", function(state) features.autoStarterTree = state end)
+AutoTab:Toggle("x3 Auto Upgrade Tree", function(state) features.autoTree3x = state end)
+AutoTab:Label("Improved Anti-Cheat active")
+
+-- Original main script
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ZyroYonk/ZyroYonk/refs/heads/main/Noob%20Incremental"))()

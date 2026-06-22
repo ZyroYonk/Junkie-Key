@@ -22,7 +22,7 @@ Arqel.Shop = {
     Title = "Get Premium",
     Subtitle = "Instant delivery • 24/7 support",
     ButtonText = "Buy",
-    Link = "https://discord.gg/PUE6et7CCz"
+    Link = "https://starforge.mysellauth.com/products"
 }
 
 -- Updated changelog (only game names + update logs)

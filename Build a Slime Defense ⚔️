@@ -51,4 +51,4 @@ Arqel:LaunchJunkie({
 })
 
 -- Only runs AFTER key is accepted ✅
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ZyroYonk/ZyroYonk/refs/heads/main/%2B1%20Aura%20Per%20Click"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ZyroYonk/ZyroYonk/refs/heads/main/Build%20A%20Slime%20Defense"))()
